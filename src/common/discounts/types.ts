@@ -1,3 +1,5 @@
+import { DiscountStrategy } from 'src/types';
+
 export interface IDiscountRule<Input, Output> {
     matches(input: Input): boolean,
     process(input: Input): Output
@@ -15,4 +17,9 @@ export interface IQuantityPricedDiscount {
         min: number,
         discountThreshold: number;
     }
+}
+
+export interface DiscountRule {
+    quantityPriced: IQuantityPricedDiscount,
+    bulkDiscount: IBulkDiscount
 }

@@ -10,6 +10,6 @@ export interface DiscountRule {
 }
 
 export enum DiscountStrategy {
-    quantityPriced,
-    bulkDiscount
+    quantityPriced = 'quantityPriced',
+    bulkDiscount = 'bulkDiscount'
 }
