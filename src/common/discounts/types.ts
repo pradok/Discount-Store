@@ -15,7 +15,7 @@ export interface IBulkDiscount {
 export interface IQuantityPricedDiscount {
     [key: string]: {
         min: number,
-        discountThreshold: number;
+        payQtyThreshold: number;
     }
 }
 

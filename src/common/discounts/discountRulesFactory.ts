@@ -10,7 +10,7 @@ const buildQuantityPricedDiscountRules = (discountRule: IQuantityPricedDiscount)
         rules.push(new QuantityPricedDiscount({
             [discountCode]: {
                 min: discountRule[discountCode].min,
-                discountThreshold: discountRule[discountCode].discountThreshold
+                payQtyThreshold: discountRule[discountCode].payQtyThreshold
             }
         }));
     }

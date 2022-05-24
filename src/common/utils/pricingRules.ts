@@ -4,7 +4,7 @@ export const pricingRules: DiscountRule = {
     quantityPriced: {
         qty001: {
             min: 3,
-            discountThreshold: 2
+            payQtyThreshold: 2
         }
     },
     bulkDiscount: {

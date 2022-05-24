@@ -20,6 +20,6 @@ export const mockBulkDiscount = (overrides?: IBulkDiscount) => {
 
 export const mockQuantityPricedDiscount = (overrides?: IQuantityPricedDiscount) => {
     return new QuantityPricedDiscount({
-        qty001: { min: 3, discountThreshold: 2 }, ...overrides
+        qty001: { min: 3, payQtyThreshold: 2 }, ...overrides
     });
 };
