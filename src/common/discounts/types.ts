@@ -4,6 +4,15 @@ export interface IDiscountRule<Input, Output> {
 }
 
 export interface IBulkDiscount {
-    min: number,
-    amount: number;
+    [key: string]: {
+        min: number,
+        amount: number;
+    }
+}
+
+export interface IQuantityPricedDiscount {
+    [key: string]: {
+        min: number,
+        discountThreshold: number;
+    }
 }

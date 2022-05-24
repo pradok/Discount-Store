@@ -24,4 +24,16 @@ describe('BulkDiscount', () => {
             expect(product.totalDiscount).toEqual(0);
         });
     });
+
+    describe('matches', () => {
+        it('returns true', () => {
+            product = mockProduct();
+            expect(bulkDiscount.matches(product)).toEqual(true);
+        });
+
+        it('returns false', () => {
+            product = mockProduct({ discountRule: undefined });
+            expect(bulkDiscount.matches(product)).toEqual(false);
+        });
+    });
 });

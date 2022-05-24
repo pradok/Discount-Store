@@ -1,7 +1,8 @@
 import { Product } from '../../Product';
 import { DiscountStrategy, IProduct } from '../../types';
 import { BulkDiscount } from '../discounts/BulkDiscount';
-import { IBulkDiscount } from '../discounts/types';
+import { QuantityPricedDiscount } from '../discounts/QuantityPricedDiscount';
+import { IBulkDiscount, IQuantityPricedDiscount } from '../discounts/types';
 
 export const mockProduct = (overrides?: Partial<IProduct>) => {
     return new Product({
@@ -13,6 +14,12 @@ export const mockProduct = (overrides?: Partial<IProduct>) => {
 
 export const mockBulkDiscount = (overrides?: IBulkDiscount) => {
     return new BulkDiscount({
-        min: 4, amount: 5000, ...overrides
+        qty001: { min: 4, amount: 5000 }, ...overrides
+    });
+};
+
+export const mockQuantityPricedDiscount = (overrides?: IQuantityPricedDiscount) => {
+    return new QuantityPricedDiscount({
+        qty001: { min: 3, discountThreshold: 2 }, ...overrides
     });
 };
