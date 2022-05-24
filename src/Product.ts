@@ -5,7 +5,7 @@ export class Product {
     private _quantity: number;
     private _price: number;
     private _totalDiscount = 0;
-    private _discountRule: DiscountRule;
+    private _discountRule: DiscountRule | undefined;
 
     constructor({ sku, price, quantity, discountRule }: IProduct) {
         this.sku = sku;
@@ -15,7 +15,7 @@ export class Product {
     }
 
     get discountRule() {
-        return this._discountRule;
+        return this._discountRule ? this._discountRule : undefined;
     }
 
     get price() {

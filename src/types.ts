@@ -2,7 +2,7 @@ export interface IProduct {
     sku: string;
     price: number;
     quantity: number;
-    discountRule: DiscountRule;
+    discountRule?: DiscountRule;
 }
 
 export interface DiscountRule {

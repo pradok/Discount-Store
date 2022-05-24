@@ -9,12 +9,12 @@ export class BulkDiscount implements IDiscountRule<Product, Product> {
         this._quantityDiscount = discount;
     }
     public process(input: Product): Product {
-        if (input.quantity > this._quantityDiscount.min && input.price > this._quantityDiscount.amount) {
-            input.totalDiscount = this._quantityDiscount.amount * input.quantity;
+        if (input.quantity > this._quantityDiscount[input.discountRule?.code].min && input.price > this._quantityDiscount[input.discountRule?.code].amount) {
+            input.totalDiscount = this._quantityDiscount[input.discountRule?.code].amount * input.quantity;
         }
         return input;
     }
     public matches(input: Product): boolean {
-        return input.discountRule.strategy === DiscountStrategy.bulkDiscount;
+        return input.discountRule?.strategy === DiscountStrategy.bulkDiscount;
     }
 }
