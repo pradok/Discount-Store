@@ -1,6 +1,6 @@
 import { DiscountRule } from '../discounts/types';
 
-export const pricingRules: DiscountRule = {
+export const discountStrategyRules: DiscountRule = {
     quantityPriced: {
         qty001: {
             min: 3,

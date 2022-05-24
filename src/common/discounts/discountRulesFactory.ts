@@ -1,5 +1,5 @@
 import { DiscountStrategy } from '../../types';
-import { pricingRules } from '../utils/pricingRules';
+import { discountStrategyRules } from '../utils/discountStrategyRules';
 import { BulkDiscount } from './BulkDiscount';
 import { QuantityPricedDiscount } from './QuantityPricedDiscount';
 import { IBulkDiscount, IQuantityPricedDiscount } from './types';
@@ -34,12 +34,12 @@ const buildBulkDiscountRules = (discountRule: IBulkDiscount): BulkDiscount[] => 
 
 export const discountRulesFactory = () => {
     const discountRules: Array<BulkDiscount | QuantityPricedDiscount> = [];
-    for (const discountRule in pricingRules) {
+    for (const discountRule in discountStrategyRules) {
         if (discountRule === DiscountStrategy.quantityPriced) {
-            discountRules.push(...buildQuantityPricedDiscountRules(pricingRules[discountRule]));
+            discountRules.push(...buildQuantityPricedDiscountRules(discountStrategyRules[discountRule]));
         }
         if (discountRule === DiscountStrategy.bulkDiscount) {
-            discountRules.push(...buildBulkDiscountRules(pricingRules[discountRule]));
+            discountRules.push(...buildBulkDiscountRules(discountStrategyRules[discountRule]));
         }
     }
     return discountRules;
