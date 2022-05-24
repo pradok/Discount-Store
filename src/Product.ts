@@ -30,8 +30,8 @@ export class Product {
         return this._quantity;
     }
 
-    setQuantity(qty: number) {
-        this._quantity = this._quantity + qty;
+    set quantity(qty: number) {
+        this._quantity += qty;
     }
 
     get totalPrice() {

@@ -8,9 +8,9 @@ export class Checkout {
     public scan(newItem: Product) {
         const existingItem = this._cart.find(item => item.sku === newItem.sku);
         if (existingItem) {
-            existingItem.setQuantity(1);
+            existingItem.quantity = 1;
         } else {
-            newItem.setQuantity(1);
+            newItem.quantity = 1;
             this._cart.push(newItem);
         }
     }
