@@ -42,6 +42,5 @@ export const discountRulesFactory = () => {
             discountRules.push(...buildBulkDiscountRules(pricingRules[discountRule]));
         }
     }
-    console.log({ discountRules });
     return discountRules;
 };

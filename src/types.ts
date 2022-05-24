@@ -1,7 +1,7 @@
 export interface IProduct {
     sku: string;
     price: number;
-    quantity: number;
+    quantity?: number;
     discountRule?: DiscountRule;
 }
 

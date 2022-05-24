@@ -9,7 +9,7 @@ export class QuantityPricedDiscount implements IDiscountRule<Product, Product> {
         this._quantityDiscount = discount;
     }
     public process(input: Product): Product {
-        if (input.quantity > this._quantityDiscount[input.discountRule?.code].min) {
+        if (input.quantity >= this._quantityDiscount[input.discountRule?.code].min) {
             const { min: minQty } = this._quantityDiscount[input.discountRule.code];
             const { discountThreshold } = this._quantityDiscount[input.discountRule.code];
             const parts = Math.trunc(input.quantity / minQty);
